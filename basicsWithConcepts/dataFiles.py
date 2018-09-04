@@ -1,3 +1,5 @@
 f = open("data.txt","rt")
+print(f.read())
 
-   print(f.read())
+
+(f.readline())
