@@ -9,4 +9,4 @@ if (n%2) == 0 :
     elif n >= 21 :
         print("Not Weird")
 else :
-    print("Weird")
+    print("Weird") 
