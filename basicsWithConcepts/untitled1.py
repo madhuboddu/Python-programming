@@ -12,7 +12,11 @@ from mlxtend.feature_selection import SequentialFeatureSelector as sfs
 data = pd.read_csv("data.csv")
 
 
+
+
+
 x_train , x_test , y_train , y_test  = train_test_split( data.iloc[:, :-1], data.iloc[ :,-1], test_size = 0.15,random_state = 123)
+
 
 
 
@@ -23,9 +27,12 @@ model.k_features_idx
 
 SequentialFeatureSelector
 
-data = data.iloc[ :,[0,2,3,1]]  # to rearrange the coloumns
+data = data.iloc[ :,[0,2,3,1]]
 
 
+
+
+  # to rearrange the coloumns
 
 #######################################################################################################################
 
@@ -43,6 +50,7 @@ data = data.iloc[ :,[0,2,3,1]]  # to rearrange the coloumns
 # if RMSE of test set is lower than the Train set ------- over fit
 
 
+
 #Different types of models or methods to select different features
 
 #exuastive search
@@ -55,25 +63,3 @@ data = data.iloc[ :,[0,2,3,1]]  # to rearrange the coloumns
 reg_model =  sm.OLS(np.log(y_train), x_train).fit()
 
 reg_model =  sm.OLS(y_train, x_train).fit()
-
-
-
-print(reg_model.summary())
-
-
-y_predict  = reg_model.predict(x_test)
-
-
-
-np.sqrt(mean_squared_error(y_test,np.exp(y_predict)))
-
-np.sqrt(mean_squared_error(y_test,y_predict)) 
-  
-#since the rmse value with out LOG is quite low we consider the model without log. 
-
-#sorting the data frame according to the income.
-
-
-data.sort_values(by = "income",inplace = True)
-
-data
