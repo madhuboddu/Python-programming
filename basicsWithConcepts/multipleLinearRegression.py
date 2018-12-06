@@ -12,7 +12,7 @@ from mlxtend.feature_selection import SequentialFeatureSelector as sfs
 data = pd.read_csv("data.csv")
 
 
-x_train , x_test , y_train , y_test  = train_test_split( data.iloc[:, :-1], data.iloc[ :,-1], test_size = 0.15,random_state = 123)
+c
 
 
 
