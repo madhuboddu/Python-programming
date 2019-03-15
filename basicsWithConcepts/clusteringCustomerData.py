@@ -10,10 +10,10 @@ Created on Wed Feb 27 11:11:35 2019
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
-
+import time
 
 customer_data  = pd.read_csv('Mall_Customers.csv')
-
+start = time.time()
 customer_data.head()
 
 customer_data.info()
@@ -82,7 +82,7 @@ plt.title('customer spening clusters')
 plt.legend()
 plt.show()
 
-
+print('Execution time - ',time.time()-start)
 
 
 
